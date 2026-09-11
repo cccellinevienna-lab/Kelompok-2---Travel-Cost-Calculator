@@ -1,0 +1,46 @@
+BEGIN
+
+DEKLARASI VARIABEL:
+    jarak            : REAL
+    efisiensi        : REAL
+    harga            : REAL
+    jenisPerjalanan  : INTEGER
+    totalJarak       : REAL
+    konsumsiBBM      : REAL
+    totalBiaya       : REAL
+    ulang            : STRING
+
+DO
+    OUTPUT "Masukkan jarak perjalanan (km): "
+    INPUT jarak
+
+    OUTPUT "Masukkan efisiensi bahan bakar kendaraan (km/liter): "
+    INPUT efisiensi
+
+    OUTPUT "Masukkan harga bahan bakar per liter: "
+    INPUT harga
+
+    OUTPUT "Pilih jenis perjalanan:"
+    OUTPUT "1. Sekali Jalan"
+    OUTPUT "2. Pulang-Pergi"
+    INPUT jenisPerjalanan
+
+    IF jenisPerjalanan == 2 THEN
+        totalJarak = jarak * 2
+    ELSE
+        totalJarak = jarak
+    ENDIF
+
+    konsumsiBBM = totalJarak / efisiensi
+    totalBiaya  = konsumsiBBM * harga
+
+    OUTPUT "Total Jarak Perjalanan: " + totalJarak + " km"
+    OUTPUT "Estimasi Konsumsi BBM: " + konsumsiBBM + " liter"
+    OUTPUT "Estimasi Total Biaya BBM: Rp" + totalBiaya
+
+    OUTPUT "Apakah ingin menghitung lagi? (y/n): "
+    INPUT ulang
+
+WHILE ulang == "y" OR ulang == "Y"
+
+END
