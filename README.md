@@ -25,7 +25,7 @@ Number Guessing Game
 
 ## 3. Project Description
 
-This program is a simple game in which the player must guess a number determined by the computer.
+A simple program that estimates fuel cost for a trip based on distance, fuel efficiency, and fuel price.
 
 ---
 
@@ -47,20 +47,21 @@ This project is designed to apply the following programming concepts:
 
 The program receives:
 
-- The player's guess
-- The number of attempts
+- Travel distance (km)
+- Vehicle fuel efficiency (km/liter)
+- Fuel price per liter
+- Trip type (one-way or round trip)
 
 ---
 
 ## 6. Process
 
-The program compares the player's guess with the target number.
+The program calculates the total distance, fuel consumption, and total fuel cost based on the user's input.
 
-If the guess is:
-
-- Too high → the program provides a "too high" message
-- Too low → the program provides a "too low" message
-- Correct → the player wins
+If the trip type is round trip → total distance = distance × 2
+If the trip type is one-way → total distance = distance
+Fuel consumption = total distance ÷ fuel efficiency
+Total fuel cost = fuel consumption × fuel price
 
 ---
 
@@ -68,10 +69,10 @@ If the guess is:
 
 The program displays:
 
-- The result of each guess
-- Hints or feedback
-- The number of remaining attempts
-- The final game status (win/loss)
+- Total travel distance
+- Estimated fuel consumption
+- Estimated total fuel cost
+- A prompt asking whether the user wants to calculate another trip
 
 ---
 
