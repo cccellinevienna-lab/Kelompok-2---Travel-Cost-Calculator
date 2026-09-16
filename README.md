@@ -58,10 +58,10 @@ The program receives:
 
 The program calculates the total distance, fuel consumption, and total fuel cost based on the user's input.
 
-If the trip type is round trip → total distance = distance × 2
-If the trip type is one-way → total distance = distance
-Fuel consumption = total distance ÷ fuel efficiency
-Total fuel cost = fuel consumption × fuel price
+- If the trip type is round trip = distance × 2
+- If the trip type is one-way = distance
+- Fuel consumption = total distance ÷ fuel efficiency
+- Total fuel cost = fuel consumption × fuel price
 
 ---
 
