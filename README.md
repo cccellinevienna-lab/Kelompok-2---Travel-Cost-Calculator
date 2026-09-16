@@ -10,7 +10,7 @@
 | No. | Name | Student ID | Role |
 |---|---|---|---|
 | 1 | Student 1 | XXXXX | Project Coordinator |
-| 2 | Student 2 | XXXXX | Algorithm |
+| 2 | Student 2 | Audria Althafunnisa | 2610312008 | Algorithm |
 | 3 | Gizza Al Fathir Pratama | 2610312029 | Flowchart |
 | 4 | Student 4 | XXXXX | JavaScript |
 | 5 | Student 5 | XXXXX | Testing & Documentation |
