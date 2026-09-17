@@ -72,6 +72,7 @@ The program displays:
 - Total travel distance
 - Estimated fuel consumption
 - Estimated total fuel cost
+- A prompt asking about the type of trip the user is taking.
 - A prompt asking whether the user wants to calculate another trip
 
 ---
