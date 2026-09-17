@@ -1,5 +1,3 @@
-BEGIN
-
 DEKLARASI VARIABEL:
     jarak            : REAL
     efisiensi        : REAL
@@ -20,10 +18,13 @@ DO
     OUTPUT "Masukkan harga bahan bakar per liter: "
     INPUT harga
 
-    OUTPUT "Pilih jenis perjalanan:"
-    OUTPUT "1. Sekali Jalan"
-    OUTPUT "2. Pulang-Pergi"
-    INPUT jenisPerjalanan
+    DO
+        OUTPUT "Pilih jenis perjalanan (1 = Sekali Jalan, 2 = Pulang-Pergi): "
+        INPUT jenisPerjalanan
+        IF jenisPerjalanan != 1 AND jenisPerjalanan != 2 THEN
+            OUTPUT "Pilihan tidak valid! Harus ketik angka [1] atau [2]."
+        ENDIF
+    WHILE jenisPerjalanan != 1 AND jenisPerjalanan != 2
 
     IF jenisPerjalanan == 2 THEN
         totalJarak = jarak * 2
@@ -38,9 +39,14 @@ DO
     OUTPUT "Estimasi Konsumsi BBM: " + konsumsiBBM + " liter"
     OUTPUT "Estimasi Total Biaya BBM: Rp" + totalBiaya
 
-    OUTPUT "Apakah ingin menghitung lagi? (y/n): "
-    INPUT ulang
+    DO
+        OUTPUT "Apakah ingin menghitung lagi? (y/n): "
+        INPUT ulang
+        IF ulang != "y" AND ulang != "n" THEN
+            OUTPUT "Pilihan tidak valid! Harus ketik huruf [y] atau [n]."
+        ENDIF
+    WHILE ulang != "y" AND ulang != "n"
 
-WHILE ulang == "y" OR ulang == "Y"
+WHILE ulang == "y"
 
 END
