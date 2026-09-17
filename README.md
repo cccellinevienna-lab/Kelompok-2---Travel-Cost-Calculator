@@ -1,3 +1,6 @@
+![Image Alt](image_url)
+
+
 # Travel Cost Calculator by Group 2
 
 ## 1. Group Information
