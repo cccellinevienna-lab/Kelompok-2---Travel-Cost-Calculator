@@ -24,7 +24,7 @@ DO
         IF jenisPerjalanan != 1 AND jenisPerjalanan != 2 THEN
             OUTPUT "Pilihan tidak valid! Harus ketik angka [1] atau [2]."
         ENDIF
-    WHILE jenisPerjalanan != 1 AND jenisPerjalanan != 2
+    UNTIL jenisPerjalanan != 1 AND jenisPerjalanan != 2
 
     IF jenisPerjalanan == 2 THEN
         totalJarak = jarak * 2
@@ -45,8 +45,8 @@ DO
         IF ulang != "y" AND ulang != "n" THEN
             OUTPUT "Pilihan tidak valid! Harus ketik huruf [y] atau [n]."
         ENDIF
-    WHILE ulang != "y" AND ulang != "n"
+    UNTIL ulang != "y" AND ulang != "n"
 
-WHILE ulang == "y"
+UNTIL ulang == "y"
 
 END
