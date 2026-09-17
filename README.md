@@ -1,4 +1,4 @@
-![Image Alt](image_url)
+![Image Alt]([image_url](https://github.com/cccellinevienna-lab/Kelompok-2---Travel-Cost-Calculator/blob/fdc486e31a15e8568a4356a3ae1138c4d6462b73/TRAVEL%20COST%20CALCULATOR.png))
 
 
 # Travel Cost Calculator by Group 2
