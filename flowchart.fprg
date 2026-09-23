@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="TravelCostCalculator"/>
+        <attribute name="authors" value="celinOt"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-09-23 09:56:05 PM"/>
+        <attribute name="created" value="Y2VsaW5PdDtMQVBUT1AtQ1ROVDFWSUU7MjAyNi0wOS0xMDsxMDo1MDoyMyBBTTszMDc3"/>
+        <attribute name="edited" value="Y2VsaW5PdDtMQVBUT1AtQ1ROVDFWSUU7MjAyNi0wOS0xMDsxMToxODozNyBBTTsyOzMxOTY="/>
+        <attribute name="edited" value="Z2l6emE7R0laWkE7MjAyNi0wOS0yMzswOTo1NjowNSBQTTs1OzIzNDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="jarak, efisiensi, harga, totalJarak, konsumsiBBM, totalBiaya" type="Real" array="False" size=""/>
+            <declare name="jenisPerjalanan" type="Integer" array="False" size=""/>
+            <declare name="ulang" type="String" array="False" size=""/>
+            <do expression="ulang == &quot;y&quot;">
+                <output expression="&quot;=== TRAVEL COST CALCULATOR ===&quot;" newline="True"/>
+                <output expression="&quot;Masukkan jarak perjalanan (Km): &quot;" newline="True"/>
+                <input variable="jarak"/>
+                <output expression="&quot;Masukkan efisiensi bahan bakar (Km/Liter): &quot;" newline="True"/>
+                <input variable="efisiensi"/>
+                <output expression="&quot;Masukkan harga bahan bakar per liter: &quot;" newline="True"/>
+                <input variable="harga"/>
+                <do expression="jenisPerjalanan != 1 AND jenisPerjalanan != 2">
+                    <output expression="&quot;Pilih jenis perjalanan (1 = Sekali Jalan, 2 = Pulang-Pergi): &quot;" newline="True"/>
+                    <input variable="jenisPerjalanan"/>
+                    <if expression="jenisPerjalanan != 1 AND jenisPerjalanan != 2">
+                        <then>
+                            <output expression="&quot;Pilihan tidak valid! Harus ketik angka [1] atau [2].&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </do>
+                <if expression="jenisPerjalanan == 2">
+                    <then>
+                        <assign variable="totalJarak" expression="jarak * 2"/>
+                    </then>
+                    <else>
+                        <assign variable="totalJarak" expression="jarak"/>
+                    </else>
+                </if>
+                <if expression="efisiensi &lt;= 0">
+                    <then>
+                        <output expression="&quot;Error! Efisiensi bahan bakar tidak boleh 0 atau kosong.&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <assign variable="konsumsiBBM" expression="totalJarak / efisiensi"/>
+                        <assign variable="totalBiaya" expression="konsumsiBBM * harga"/>
+                        <output expression="&quot;Total Jarak Perjalanan: &quot; &amp; totalJarak &amp; &quot; Km&quot;" newline="True"/>
+                        <output expression="&quot;Estimasi Konsumsi BBM: &quot; &amp; ToFixed(konsumsiBBM, 2) &amp; &quot; Liter&quot;" newline="True"/>
+                        <output expression="&quot;Total Biaya BBM: Rp &quot; &amp; Int(totalBiaya + 0.999999)" newline="True"/>
+                    </else>
+                </if>
+                <do expression="ulang != &quot;y&quot; AND ulang != &quot;n&quot;">
+                    <output expression="&quot;Apakah ingin menghitung lagi? (y/n): &quot;" newline="True"/>
+                    <input variable="ulang"/>
+                    <if expression="ulang != &quot;y&quot; AND ulang != &quot;n&quot;">
+                        <then>
+                            <output expression="&quot;Pilihan tidak valid! Harus ketik huruf [y] atau [n].&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </do>
+            </do>
+        </body>
+    </function>
+</flowgorithm>
