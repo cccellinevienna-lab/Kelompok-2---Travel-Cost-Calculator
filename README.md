@@ -102,7 +102,7 @@ File:
 
 The JavaScript implementation of the program is available in:
 
-`program.js`
+[program.js](javascript,js)
 
 ---
 
