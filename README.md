@@ -12,10 +12,10 @@
 
 | No. | Name | Student ID | Role |
 |---|---|---|---|
-| 1 | Student 1 | XXXXX | Project Coordinator |
+| 1 | Abdulkareem Zayd Saleem | XXXXX | Project Coordinator |
 | 2 | Audria Althafunnisa | 2610312008 | Algorithm |
 | 3 | Gizza Al Fathir Pratama | 2610312029 | Flowchart |
-| 4 | Student 4 | XXXXX | JavaScript |
+| 4 | Celline Vienna Pakpahan | 2610312033 | JavaScript |
 | 5 | Nayla Putri Anizha | 2610312021 | Testing & Documentation |
 
 ---
