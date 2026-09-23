@@ -1,12 +1,14 @@
 DEKLARASI VARIABEL:
-    jarak            : REAL
-    efisiensi        : REAL
-    harga            : REAL
-    jenisPerjalanan  : INTEGER
-    totalJarak       : REAL
-    konsumsiBBM      : REAL
-    totalBiaya       : REAL
-    ulang            : STRING
+jarak           : REAL
+efisiensi       : REAL
+harga           : REAL
+jenisPerjalanan : INTEGER
+totalJarak      : REAL
+konsumsiBBM     : REAL
+totalBiaya      : REAL
+ulang           : STRING
+
+ulang = "y"
 
 DO
     OUTPUT "=== TRAVEL COST CALCULATOR ==="
@@ -20,34 +22,39 @@ DO
     INPUT harga
 
     DO
-        OUTPUT "Pilih jenis perjalanan (1 = Sekali Jalan, 2 = Pulang-Pergi): "
-        INPUT jenisPerjalanan
-        IF jenisPerjalanan != 1 AND jenisPerjalanan != 2 THEN
-            OUTPUT "Pilihan tidak valid! Harus ketik angka [1] atau [2]."
-        ENDIF
-    UNTIL jenisPerjalanan == 1 OR jenisPerjalanan == 2
+    OUTPUT "Pilih jenis perjalanan (1 = Sekali Jalan, 2 = Pulang-Pergi): "
+    INPUT jenisPerjalanan
+    IF jenisPerjalanan != 1 AND jenisPerjalanan != 2 THEN
+    ALERT "Pilihan tidak valid! Harus ketik angka [1] atau [2]."
+    ENDIF
+    WHILE jenisPerjalanan != 1 AND jenisPerjalanan != 2
 
     IF jenisPerjalanan == 2 THEN
-        totalJarak = jarak * 2
+    totalJarak = jarak * 2
     ELSE
-        totalJarak = jarak
+    totalJarak = jarak
     ENDIF
 
+    IF efisiensi <= 0 THEN
+    OUTPUT "Error! Efisiensi bahan bakar tidak boleh 0 atau kosong."
+    ELSE
     konsumsiBBM = totalJarak / efisiensi
     totalBiaya  = konsumsiBBM * harga
 
     OUTPUT "Total Jarak Perjalanan: " + totalJarak + " km"
     OUTPUT "Estimasi Konsumsi BBM: " + konsumsiBBM + " liter"
     OUTPUT "Estimasi Total Biaya BBM: Rp" + totalBiaya
+    ENDIF
 
     DO
-        OUTPUT "Apakah ingin menghitung lagi? (y/n): "
-        INPUT ulang
-        IF ulang != "y" AND ulang != "n" THEN
-            OUTPUT "Pilihan tidak valid! Harus ketik huruf [y] atau [n]."
-        ENDIF
-    UNTIL ulang == "y" OR ulang == "n"
+    OUTPUT "Apakah ingin menghitung lagi? (y/n): "
+    INPUT ulang
+    ulang = LOWERCASE(ulang)
+    IF ulang != "y" AND ulang != "n" THEN
+    OUTPUT "Pilihan tidak valid! Harus ketik huruf [y] atau [n]."
+    ENDIF
+    WHILE ulang != "y" AND ulang != "n"
 
-UNTIL ulang == "n"
+WHILE ulang == "y"
 
 END
