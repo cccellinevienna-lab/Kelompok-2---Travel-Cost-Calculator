@@ -34,7 +34,7 @@ do {
         alert(
             "Total Jarak Perjalanan: " + totalJarak + " Km\n" +
             "Estimasi Konsumsi BBM: " + konsumsiBBM.toFixed(2) + " Liter\n" +
-            "Total Biaya BBM: Rp " + Math.ceil(totalBiaya)
+            "Total Biaya BBM: Rp " + Math.round(totalBiaya)
         );
     }
 
